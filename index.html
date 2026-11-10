@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Super Market — Grand Opening Launch Event in Coventry</title>
+  <meta name="description"
+    content="Star Super Market is launching soon in Coventry. Sign up for the Grand Opening launch event." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Sleek Top Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Grand Opening Announcement">
+    <div class="announcement-bar__inner">
+      <span class="live-indicator">
+        <span class="live-indicator__dot"></span>
+        LAUNCHING SOON
+      </span>
+      <span class="announcement-bar__text">
+        <strong>Star Super Market</strong> is opening its doors soon in <strong>Coventry</strong> &mdash; Sign up below
+        for the Grand Opening Launch Event
+      </span>
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+    <!-- Minimalist Modern Navbar -->
+    <header class="navbar">
+      <a href="#" class="logo-container" id="logo-slot" aria-label="Star Super Market Home">
+        <img src="star supermarket logo1.png" alt="Star Super Market" class="brand-logo" />
+      </a>
+
+      <div class="navbar__right">
+        <div class="status-pill">
+          <span class="status-pill__tag">LOCATION</span>
+          <span class="status-pill__value">Coventry, UK</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Modern Split Layout -->
+    <main class="main-grid" aria-labelledby="hero-heading">
+
+      <!-- Left Column: Editorial Brand Story & Launch Event Highlights -->
+      <section class="content-col">
+        <div class="eyebrow-group">
+          <span class="eyebrow-badge">GRAND OPENING EVENT</span>
+          <span class="eyebrow-sub">LAUNCHING SOON IN COVENTRY</span>
+        </div>
+
+        <h1 id="hero-heading" class="display-title">
+          Everyday fresh.<br />
+          Quality groceries.<br />
+          Hello, <span class="highlight-red">Coventry.</span>
+        </h1>
+
+        <p class="lead-copy">
+          <strong>Star Super Market</strong> is bringing a fresher, brighter grocery experience to the heart of
+          Coventry. Expect crisp local produce, authentic world foods, and your everyday household essentials all under
+          one roof.
+        </p>
+
+        <!-- Modern Bento-Style Event Highlights Grid -->
+        <div class="perks-grid" aria-label="Grand Opening Launch Event Details">
+          <article class="perk-card">
+            <div class="perk-card__top">
+              <span class="perk-index">01</span>
+              <span class="perk-tag">LAUNCH DATE</span>
+            </div>
+            <h3 class="perk-title">Official Opening Alert</h3>
+            <p class="perk-desc">Be the first to know the exact date and ribbon-cutting time for our Coventry launch
+              event.</p>
+          </article>
+
+          <article class="perk-card">
+            <div class="perk-card__top">
+              <span class="perk-index">02</span>
+              <span class="perk-tag">EVENT INVITE</span>
+            </div>
+            <h3 class="perk-title">Grand Opening Guestlist</h3>
+            <p class="perk-desc">Reserve your place and join the local community as we officially open the doors to Star
+              Super Market.</p>
+          </article>
+
+          <article class="perk-card perk-card--wide">
+            <div class="perk-card__top">
+              <span class="perk-index">03</span>
+              <span class="perk-tag perk-tag--red">COVENTRY LAUNCH</span>
+            </div>
+            <div class="perk-card__wide-body">
+              <div>
+                <h3 class="perk-title">Sign Up for the Launch Event of Star Super Market</h3>
+                <p class="perk-desc">Register your details so we can send you the official venue location and opening
+                  day schedule.</p>
+              </div>
+              <div class="social-proof-counter">
+                <span class="counter-num" id="rsvpCounter">148</span>
+                <span class="counter-label">Coventry locals<br />signed up</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Right Column: Elevated Modern Signup Container -->
+      <aside class="form-col">
+        <div class="signup-container" id="signup-card">
+
+          <div class="signup-container__top-bar">
+            <span class="pass-type">STAR SUPER MARKET &bull; LAUNCH EVENT</span>
+            <span class="pass-status">COVENTRY</span>
+          </div>
+
+          <div class="signup-container__body">
+            <div class="form-header" id="form-header">
+              <h2>Sign Up for the Launch Event</h2>
+              <p>Register below for the Grand Opening of Star Super Market in Coventry.</p>
+            </div>
+
+            <form id="opening-signup-form" class="modern-form" novalidate>
+              <div class="input-block">
+                <label for="fullName">Full Name <span class="req">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" autocomplete="name"
+                  required />
+                <span class="field-error" id="nameError" role="alert"></span>
+              </div>
+
+              <div class="input-block">
+                <label for="email">Email Address <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="you@example.co.uk" autocomplete="email"
+                  required />
+                <span class="field-error" id="emailError" role="alert"></span>
+              </div>
+
+              <div class="input-row">
+                <div class="input-block">
+                  <label for="phone">Mobile <span class="opt">(Optional)</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="07700 900000" autocomplete="tel" />
+                </div>
+
+                <div class="input-block">
+                  <label for="postcode">Postcode <span class="opt">(Optional)</span></label>
+                  <input type="text" id="postcode" name="postcode" placeholder="e.g. CV1" autocomplete="postal-code" />
+                </div>
+              </div>
+
+              <label class="optin-box" for="smsOptIn">
+                <input type="checkbox" id="smsOptIn" name="smsOptIn" checked />
+                <span class="optin-box__text">
+                  Notify me with the <strong>Star Super Market Launch Event</strong> date, time &amp; Coventry opening
+                  details.
+                </span>
+              </label>
+
+              <button type="submit" class="cta-button" id="submitBtn">
+                <span>Sign Up for the Launch Event</span>
+                <span class="cta-button__icon" aria-hidden="true">&rarr;</span>
+              </button>
+
+              <div class="form-trust">
+                <span>Zero spam</span>
+                <span class="dot">&bull;</span>
+                <span>Official Launch Invite</span>
+                <span class="dot">&bull;</span>
+                <span>Coventry Store Opening</span>
+              </div>
+            </form>
+
+            <!-- Confirmation Launch Event Pass State -->
+            <div class="signup-success" id="signup-success" hidden aria-live="polite">
+              <div class="success-pill">REGISTRATION CONFIRMED</div>
+              <h3>See you at the launch, <span id="confirmedName">Friend</span>!</h3>
+              <p>
+                You are officially signed up for the launch event of <strong>Star Super Market Coventry</strong>. We’ll
+                send the opening date and event details straight to <strong id="confirmedEmail">your inbox</strong>.
+              </p>
+
+              <div class="digital-pass">
+                <div class="digital-pass__main">
+                  <span class="digital-pass__store">STAR SUPER MARKET &mdash; COVENTRY</span>
+                  <strong class="digital-pass__title">GRAND OPENING LAUNCH PASS</strong>
+                  <span class="digital-pass__note">Official guest registration for opening day</span>
+                </div>
+                <div class="digital-pass__stub">
+                  <span class="digital-pass__stub-label">GUEST NO.</span>
+                  <span class="digital-pass__code" id="passNumber">#CV-1048</span>
+                </div>
+              </div>
+
+              <button type="button" class="secondary-btn" id="resetBtn">
+                + Register another friend or family member
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </main>
+
+    <!-- Sleek Minimal Footer -->
+    <footer class="footer">
+      <div class="footer__left">
+        <span class="footer__brand">STAR SUPER MARKET</span>
+        <span class="footer__div">/</span>
+        <span>Coventry Grand Opening Launch Event</span>
+      </div>
+      <div class="footer__right">
+        <span>Launching Soon in Coventry &bull; &copy; 2026</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
