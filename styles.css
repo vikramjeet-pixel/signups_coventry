@@ -37,6 +37,10 @@
   padding: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -663,6 +667,9 @@ body {
    Success / Digital VIP Pass State
    ========================================================================== */
 .signup-success {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1.5px dashed var(--green);
   animation: revealPass 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

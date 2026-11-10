@@ -1,12 +1,13 @@
 (function () {
   /**
    * ==========================================================================
-   * PASTE YOUR GOOGLE SHEET WEB APP URL BELOW
-   * Follow the steps in `google-apps-script.js` to get your Web App URL:
-   * Example: "https://script.google.com/macros/s/AKfycbx.../exec"
+   * GOOGLE SHEET WEB APP URL
+   * Make sure in Google Apps Script -> Deploy -> Manage deployments -> Edit:
+   * - Execute as: "Me"
+   * - Who has access: "Anyone" (NOT "Only myself" or "Anyone with Google account")
    * ==========================================================================
    */
-  const GOOGLE_SHEET_WEB_APP_URL = 'PASTE_YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE';
+  const GOOGLE_SHEET_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx5Ublk8gwc8GVlnVcpeTRgeTvCwQRQpqe6rVBP8aKmXPCx9WsDQHxnIWL0tJR9RrPMIg/exec';
 
   const form = document.getElementById('opening-signup-form');
   const formHeader = document.getElementById('form-header');
@@ -112,20 +113,21 @@
       GOOGLE_SHEET_WEB_APP_URL !== 'PASTE_YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE'
     ) {
       try {
+        const formBody = new URLSearchParams(payload);
         await fetch(GOOGLE_SHEET_WEB_APP_URL, {
           method: 'POST',
           mode: 'no-cors',
           headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
           },
-          body: JSON.stringify(payload)
+          body: formBody.toString()
         });
       } catch (networkErr) {
         console.warn('Could not reach Google Sheet endpoint:', networkErr);
       }
     }
 
-    // Also store locally as backup
+    // Store locally as backup & update counter
     try {
       const existing = JSON.parse(localStorage.getItem('star_supermarket_coventry_signups') || '[]');
       existing.push(payload);
@@ -139,18 +141,22 @@
       }
     }
 
+    // Immediately reset all form fields after taking the submission
+    form.reset();
     setSubmitting(false);
 
     confirmedName.textContent = firstName;
     confirmedEmail.textContent = emailVal;
     passNumber.textContent = passCode;
 
-    if (formHeader) formHeader.hidden = true;
-    form.hidden = true;
+    // Show confirmation banner and keep form reset & ready
     successBox.hidden = false;
   });
 
   fullNameInput.addEventListener('input', function () {
+    if (!successBox.hidden) {
+      successBox.hidden = true;
+    }
     if (fullNameInput.classList.contains('input-invalid')) {
       nameError.textContent = '';
       fullNameInput.classList.remove('input-invalid');
@@ -164,12 +170,14 @@
     }
   });
 
-  resetBtn.addEventListener('click', function () {
-    form.reset();
-    clearErrors();
-    successBox.hidden = true;
-    if (formHeader) formHeader.hidden = false;
-    form.hidden = false;
-    fullNameInput.focus();
-  });
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      form.reset();
+      clearErrors();
+      successBox.hidden = true;
+      if (formHeader) formHeader.hidden = false;
+      form.hidden = false;
+      fullNameInput.focus();
+    });
+  }
 })();
